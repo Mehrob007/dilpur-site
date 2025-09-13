@@ -1,6 +1,6 @@
 import { ProductItemT } from "@/types/product";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import PropertyOff from "../../../public/icons/PropertyOff.svg";
 import PropertyOn from "../../../public/icons/PropertyOn.svg";
 
@@ -18,24 +18,20 @@ export default function ProductItem({
   property,
   id,
 }: ProductItemT) {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
   const { setProperty, deleteProperty } = useStore();
   return (
     <div className="product-item">
       <div className="product-item-img">
-        <div className="image">
+        <div
+          className="image"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <Image
             className="img-product"
-            src={img[0]}
+            src={!isHovered ? img[0] : img[1]}
             alt="img-product"
-            width={360}
-            height={500}
-          />
-          <Image
-            className="img-product1"
-            src={img[1]}
-            alt="img-product"
-            width={360}
-            height={500}
           />
           {id ? <BayButton id={id} /> : ""}
         </div>
