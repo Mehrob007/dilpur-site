@@ -11,8 +11,8 @@ $white-color-90: #ffffffe5;
 $grey-color-select: #e5e5e5;
 
 .max-width {
-  max-width: 1160px;
-  margin: 0 auto;
+  max-width: calc(100% - 80px);
+  margin: 0 40px;
 }
 .description {
   display: flex;
@@ -504,7 +504,7 @@ $grey-color-select: #e5e5e5;
   }
 }
 .input-search {
-  width: 933px;
+  width: calc(100% - 240px);
   max-height: 50px;
   border: 1px solid $crossed-color;
   display: flex;
@@ -727,27 +727,28 @@ $grey-color-select: #e5e5e5;
   }
 }
 .product-item {
-  height: 595px;
-  width: 360px;
+  // height: 595px;
+  // width: 360px;
+
   // background-color: $off-color;
   display: flex;
   flex-direction: column;
   gap: 19px;
   .product-item-img {
-    height: 500px;
-    width: 360px;
+    // height: 500px;
+    // width: 360px;
     position: relative;
     .image {
-      height: 500px;
-      width: 360px;
+      // height: 500px;
+      // width: 360px;
       position: relative;
       &:hover {
-        .img-product1 {
-          display: flex;
-        }
-        .img-product {
-          display: none;
-        }
+        // .img-product1 {
+        //   display: flex;
+        // }
+        // .img-product {
+        //   display: none;
+        // }
         .bay-button {
           > div {
             display: flex;
@@ -764,13 +765,13 @@ $grey-color-select: #e5e5e5;
       }
       .bay-button {
         > div {
-          width: 100%;
+          width: calc(100% - 40px);
           height: 100%;
           cursor: pointer;
           display: none;
           align-items: center;
           justify-content: center;
-          width: 320px;
+          // width: 320px;
           height: 60px;
           position: absolute;
           bottom: 20px;
@@ -807,6 +808,10 @@ $grey-color-select: #e5e5e5;
         .stage-size {
           display: flex;
           background-color: $white-color-90;
+          gap: 0;
+          > div{
+            flex: 1;
+          }
         }
         .stage-adding {
           display: flex;
@@ -1061,7 +1066,7 @@ $grey-color-select: #e5e5e5;
 }
 
 .product-items-error {
-  min-height: 595px;
+  // min-height: 595px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1323,7 +1328,7 @@ $grey-color-select: #e5e5e5;
     gap: 40px;
     width: max-content;
 
-    animation: scroll 20s linear infinite;
+    animation: scroll 30s linear infinite;
 
     // &:hover {
     //   animation-play-state: paused;
