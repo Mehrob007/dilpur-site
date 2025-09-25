@@ -11,8 +11,12 @@ $white-color-90: #ffffffe5;
 $grey-color-select: #e5e5e5;
 
 .max-width {
-  max-width: calc(100% - 80px);
-  margin: 0 40px;
+  max-width: calc(1920px - 80px);
+  width: calc(100% - 80px) !important;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 .description {
   display: flex;
@@ -529,14 +533,25 @@ $grey-color-select: #e5e5e5;
     }
   }
 }
+.bg-basket{
+  background: #1818187e;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
 .basket {
   position: absolute;
   z-index: 999;
   background-color: $white-color;
   padding: 20px;
   width: 400px;
-  top: 100%;
+  top: 104%;
   right: 0;
+  background-color: #fff;
+  // z-index: 100;
   & > button {
     font-family: Gilroy;
     font-weight: 500;
@@ -809,7 +824,7 @@ $grey-color-select: #e5e5e5;
           display: flex;
           background-color: $white-color-90;
           gap: 0;
-          > div{
+          > div {
             flex: 1;
           }
         }
@@ -928,26 +943,31 @@ $grey-color-select: #e5e5e5;
   display: flex;
   flex-direction: column;
   gap: 120px;
+  position: relative;
   > main {
-    width: 100%;
+    width: calc(100% - 80px);
     display: grid;
-    grid-template-columns: 660px 440px;
-    gap: 60px;
+    align-items: start;
+    grid-template-columns: 1fr 440px;
+    gap: 40px;
 
     .product-page-images {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: start;
       justify-content: start;
       gap: 6px;
-      max-height: 1125px;
-      margin-left: -90px;
+      // max-height: 1125px;
+      // margin-left: -90px;
       img {
         object-fit: cover;
+        width: calc(50% - 12px);
+        height: auto;
       }
     }
     .product-page-details {
-      position: relative;
+      position: sticky;
+      top: 110px;
       display: flex;
       flex-direction: column;
       gap: 40px;

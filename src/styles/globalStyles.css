@@ -1,6 +1,10 @@
 .max-width {
-  max-width: calc(100% - 80px);
-  margin: 0 40px;
+  max-width: 1840px;
+  width: calc(100% - 80px) !important;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .description {
@@ -502,14 +506,25 @@
   color: #505050;
 }
 
+.bg-basket {
+  background: rgba(24, 24, 24, 0.4941176471);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
 .basket {
   position: absolute;
   z-index: 999;
   background-color: #ffffff;
   padding: 20px;
   width: 400px;
-  top: 100%;
+  top: 104%;
   right: 0;
+  background-color: #fff;
 }
 .basket > button {
   font-family: Gilroy;
@@ -882,28 +897,31 @@
   display: flex;
   flex-direction: column;
   gap: 120px;
+  position: relative;
 }
 .product-page > main {
-  width: 100%;
+  width: calc(100% - 80px);
   display: grid;
-  grid-template-columns: 660px 440px;
-  gap: 60px;
+  align-items: start;
+  grid-template-columns: 1fr 440px;
+  gap: 40px;
 }
 .product-page > main .product-page-images {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: start;
   justify-content: start;
   gap: 6px;
-  max-height: 1125px;
-  margin-left: -90px;
 }
 .product-page > main .product-page-images img {
   -o-object-fit: cover;
      object-fit: cover;
+  width: calc(50% - 12px);
+  height: auto;
 }
 .product-page > main .product-page-details {
-  position: relative;
+  position: sticky;
+  top: 110px;
   display: flex;
   flex-direction: column;
   gap: 40px;
